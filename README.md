@@ -1,4 +1,4 @@
-# homebridge-contact-sensor
+# homebridge-gpio-switch
 This Homebridge plugin enables you to read the state of a switch connected to the gpio and expose it in HomeBridge as StatelessProgrammableSwitch.
 
 ## Setup
