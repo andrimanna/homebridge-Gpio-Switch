@@ -8,10 +8,10 @@ module.exports = function (homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
 
-    homebridge.registerAccessory("homebridge-gpio-motion-sensor", "MotionSensor", InfraredSensor);
+    homebridge.registerAccessory("homebridge-gpio-switch", "SPSwitch", Pulsante);
 };
 
-function InfraredSensor(log, config) {
+function Pulsante(log, config) {
     //config
     this.name = config["name"];
     this.pin = config["pin"];
@@ -21,14 +21,14 @@ function InfraredSensor(log, config) {
 
     //setup
     this.log = log;
-    this.service = new Service.MotionSensor(this.name);
+    this.service = new Service.StatelessProgrammableSwitch(this.name);
     this.service
-        .getCharacteristic(Characteristic.MotionDetected)
+        .getCharacteristic(Characteristic.ProgrammableSwitchEvent)
         .on('get', this.getState.bind(this));
 
     gpio.on('change', function (channel, value) {
         if (channel == this.pin) {
-            this.service.setCharacteristic(Characteristic.MotionDetected, value);
+            this.service.setCharacteristic(Characteristic.ProgrammableSwitchEvent, value);
         }
     }.bind(this));
     gpio.setup(this.pin, gpio.DIR_IN, gpio.EDGE_BOTH, function () {
@@ -38,13 +38,12 @@ function InfraredSensor(log, config) {
     }.bind(this));
 }
 
-InfraredSensor.prototype.getState = function (callback) {
+Pulsante.prototype.getState = function (callback) {
     callback(null, state);
 
 };
 
 
-InfraredSensor.prototype.getServices = function () {
+Pulsante.prototype.getServices = function () {
     return [this.service];
 };
-
