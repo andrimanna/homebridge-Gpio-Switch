@@ -1,17 +1,17 @@
 {
-  "name": "homebridge-gpio-motion-sensor",
+  "name": "homebridge-gpio-switch",
   "version": "0.0.2",
-  "description": "A Homebridge plugin for a infrared sensor via GPIO of a Raspberry Pi.",
+  "description": "A Homebridge plugin for a switch via GPIO of a Raspberry Pi.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Killerameise/homebridge-infrared-motion-sesnor-gpio.git"
+    "url": "https://github.com/andrimanna/homebridge-Gpio-Switch/"
   },
   "bugs": {
-    "url": "https://github.com/Killerameise/homebridge-infrared-motion-sesnor-gpio/issues"
+    "url": "https://github.com/andrimanna/homebridge-Gpio-Switch/issues"
   },
   "dependencies": {
     "rpi-gpio": "^0.9.1"
@@ -21,10 +21,7 @@
     "homebridge": ">=0.2.0"
   },
   "keywords": [
-    "motion",
-    "ir",
-    "pir",
-    "infrared",
+    "switch",
     "sensor",
     "raspberry",
     "pi",
@@ -35,6 +32,6 @@
     "homekit",
     "gpio"
   ],
-  "author": "Jaspar Mang",
+  "author": "Andrea Mannarella",
   "license": "ISC"
 }
