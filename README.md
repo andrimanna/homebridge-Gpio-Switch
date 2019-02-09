@@ -12,6 +12,7 @@ This Homebridge plugin enables you to read the state of a switch connected to th
 ```bash
 cd /usr/local/lib/node_modules
 git clone https://github.com/andrimanna/homebridge-Gpio-Switch
+npm install -g --unsafe-perm rpi-gpio
 ```
 
 3) Edit your `/root/.homebridge/config.json` and integrate your switch in the accessories array. The pins
