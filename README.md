@@ -1,30 +1,27 @@
 # homebridge-contact-sensor
-This Homebridge plugin enables you to control a infrared motion sensor switch.
+This Homebridge plugin enables you to read the state of a switch connected to the gpio and expose it in HomeBridge as StatelessProgrammableSwitch.
 
 ## Setup
 
-1) Wire a infrared motion senor to your Raspberry Pi.
+1) Wire whatever kind of switch you prefer to your Raspberry Pi.
 
 <img src="docs/circuit.png" width="300">
 
 2) Install this plugin
 
 ```bash
-npm i -g homebridge-gpio-motion-sensor
+cd /usr/local/lib/node_modules
+git clone https://github.com/andrimanna/homebridge-Gpio-Switch
 ```
 
-3) Rename the sample-config.json to config.json and integrate your sensor in the accessories array. The pins
-of the Raspberry Pi require root rights to control them. Therefore you have to save your config file not
-in your users directory. Put it under `/root/.homebridge/config.json`.
-If you are already running homekit with other apps integrate the accessories into your config.json
-and move your config file to the path above.
-
+3) Edit your `/root/.homebridge/config.json` and integrate your switch in the accessories array. The pins
+of the Raspberry Pi require root rights to control them.
 Accessory JSON config looks like:
 
 ```bash
 {
-    "accessory": "MotionSensor",
-    "name": "MotionSensor1",
-    "pin": 2
+    "accessory": "SPSwitch",
+    "name": "Pulsante",
+    "pin": 3
 }
 ```
