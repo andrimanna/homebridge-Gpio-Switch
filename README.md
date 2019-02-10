@@ -1,9 +1,9 @@
 # homebridge-gpio-switch
-This Homebridge plugin enables you to read the state of a switch connected to the gpio and expose it in HomeBridge as StatelessProgrammableSwitch.
+This Homebridge plugin enables you to read the state of a switch connected to the gpio and expose it in HomeBridge as StatelessProgrammableSwitch. It support single, double and long press.
 
 ## Setup
 
-1) Wire whatever kind of switch you prefer to your Raspberry Pi.
+1) Wire whatever kind of switch (pushbutton is better) you prefer to your Raspberry Pi with a pullup resistor.
 
 <img src="docs/circuit.png" width="300">
 
